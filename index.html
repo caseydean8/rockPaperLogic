@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2
+    </title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors!<br>
+        Key in your choice and press enter ...</h1>
+    <div id="game">
+    </div>
+    <script type="text/javascript">
+        // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+     
+        var computerChoices = ["r", "p", "s"];
+        var userChoices = ["r", "p", "s"];
+
+        // This function is run whenever the user presses a key.
+        document.onkeyup = function (event) {
+            // Determines which key was pressed.
+            var userGuess = event.key;
+            // Randomly chooses a choice from the options array. This is the Computer's guess.
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            if ((userGuess === "r" || userGuess === "p" || userGuess === "s")) {
+                alert("User guess: " + userGuess);
+                alert("Computer guess: " + computerGuess)
+
+                console.log(userChoices.indexOf(userGuess));
+                console.log(computerChoices.indexOf(computerGuess));
+
+                if (userGuess === computerGuess) {
+                    alert("You tied");
+                }
+
+
+                else if (userChoices.indexOf(userGuess) - computerChoices.indexOf(computerGuess) == -1 || userChoices.indexOf(userGuess) - computerChoices.indexOf(computerGuess) == 2) {
+                    alert("you lose");
+                }
+
+
+                else {
+                    alert("you win");
+                }
+            }
+
+
+            //   if ((userGuess === "r" || userGuess === "p" || userGuess === "s")) {
+            //     alert("User guess: " + userGuess);
+            //     alert("Computer guess: " + computerGuess)
+            //     console.log(userGuess)
+            //     console.log(computerGuess)
+            //     if (userGuess === computerGuess) {
+            //       alert("You tied");
+            //       console.log(userGuess)
+            //       console.log("userGuess is computerChoices")
+            //     }
+            //     else if (userGuess === "r" && computerGuess === "p") {
+            //       alert("You lost");
+            //       console.log("r&p")
+            //     }
+            //     else if (userGuess === "r" && computerGuess === "s") {
+            //       alert("You win");
+            //       console.log("r&s")
+            //     }
+            //     else if (userGuess === "p" && computerGuess === "r") {
+            //       alert("You win");
+            //       console.log("p&r")
+            //     }
+            //     else if (userGuess === "p" && computerGuess === "s") {
+            //       alert("You lose");
+            //     }
+            //     else if (userGuess === "s" && computerGuess === "p") {
+            //       alert("You win");
+            //     }
+            //     else if (userGuess === "s" && computerGuess === "r") {
+            //       alert("You lose");
+            //     }
+            //     else {
+            //       alert("no winner");
+            //     }
+            //   }
+            // if (userGuess === computerChoices) {
+            //   alert("You tied")
+            // }
+            // if ((userGuess === "r" && computerChoices === "p")) {
+            //   alert("You lost")
+            // }
+            // if ((userGuess === "r" && computerChoices === "s")) {
+            //   alert("You win")
+            // }
+            // if ((userGuess === "p" && computerChoices === "r")) {
+            //   alert("You win")
+            // };
+            // if ((userGuess === "p" && computerChoices === "s")) {
+            //   alert("You lose")
+            // }
+            // if ((userGuess === "s" && computerChoices === "p")) {
+            //   alert("You win")
+            // }
+            // if ((userGuess === "s" && computerChoices === "r")) {
+            //   alert("You lose")
+            // }
+        }
+    </script>
+</body>
+
+</html>
